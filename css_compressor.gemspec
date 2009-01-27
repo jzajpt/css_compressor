@@ -7,12 +7,16 @@ Gem::Specification.new do |s|
   s.author      = "Jiri Zajpt"
   s.homepage    = "http://github.com/jzajpt/css_compressor"
   s.description = "CSS Compressor is a simple Ruby library for compressing CSS files."
+  s.rubyforge_project = "shoulda"
   s.require_path     = "lib"
+  s.default_executable = "csscomp"
+  s.executables      = ["csscomp"]
   s.has_rdoc         = true
   s.rdoc_options     = ["--main", "README.rdoc"]
   s.extra_rdoc_files = ["README.rdoc"]
   s.files            = [
     "README.rdoc",
-		"css_compressor.gemspec", 
+		"css_compressor.gemspec",
+		"bin/csscomp",
 		"lib/css_compressor.rb"]
 end
