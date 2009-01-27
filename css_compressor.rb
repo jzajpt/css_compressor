@@ -13,14 +13,14 @@ class CssCompressor
   attr_accessor :compressed_size
   attr_accessor :ratio
 
+  # Opens given input file.
   def initialize(input_file)
     @input_file = input_file
+    read_original_css
   end
   
   # Reads given input CSS file and compresses it in memory.
   def compress
-    read_original_css
-
     @compressed_css = @original_css.gsub(/\/\*.*?\*\//m, '')
     
     tokens   = @compressed_css.split(/[ \t\n]/)
@@ -36,6 +36,8 @@ class CssCompressor
       end
       @compressed_css << token
     end
+    
+    @compressed_css.strip
 
     @compressed_size = @compressed_css.length
     @ratio           = @compressed_size / @original_size.to_f
@@ -52,6 +54,7 @@ class CssCompressor
   
   protected
   
+  # Reads input file contents and its size.
   def read_original_css
     File.open(@input_file) do |file|
       @original_css  = file.read
@@ -59,13 +62,3 @@ class CssCompressor
     @original_size = File.size(@input_file)
   end
 end
-
-input_file = ARGV[0]
-exit if input_file.nil?
-csscomp = CssCompressor.new(input_file)
-csscomp.compress!
-
-puts "#{csscomp.compressed_css}"
-puts "Original size = #{csscomp.original_size}, compressed size = #{csscomp.compressed_size}"
-puts "Compression ration = #{csscomp.ratio}"
-
