@@ -23,10 +23,8 @@ class CssCompressor
   def compress
     @compressed_css = @original_css.gsub(/\/\*.*?\*\//m, '')
     
-    tokens   = @compressed_css.split(/[ \t\n]/)
+    tokens   = @compressed_css.split(/[ \t\n]/) - ['']
     @compressed_css = ''
-    
-    tokens = tokens - ['']
 
     tokens.each_with_index do |token, i|
       previous_token = tokens[i-1] if i > 0
@@ -37,7 +35,7 @@ class CssCompressor
       @compressed_css << token
     end
     
-    @compressed_css.strip
+    @compressed_css.strip!
 
     @compressed_size = @compressed_css.length
     @ratio           = @compressed_size / @original_size.to_f
