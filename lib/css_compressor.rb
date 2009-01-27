@@ -21,22 +21,22 @@ class CssCompressor
   
   # Reads given input CSS file and compresses it in memory.
   def compress
+    # Remove single & multi-line comments
     @compressed_css = @original_css.gsub(/\/\*.*?\*\//m, '')
     
-    tokens   = @compressed_css.split(/[ \t\n]/) - ['']
+    tokens = @compressed_css.split(/[ \t\n]/) - ['']
     @compressed_css = ''
 
     tokens.each_with_index do |token, i|
       previous_token = tokens[i-1] if i > 0
 
       unless (previous_token && previous_token.match(/[:;}{,]\Z/)) || token.match(/\A[\{]/)
-        @compressed_css << " "
+        @compressed_css << ' '
       end
       @compressed_css << token
     end
     
     @compressed_css.strip!
-
     @compressed_size = @compressed_css.length
     @ratio           = @compressed_size / @original_size.to_f
   end
