@@ -25,9 +25,9 @@ or cloned from:
 
 CSS Compressor is fairly simple to use:
 
-csscomp = CssCompressor.new(input_file) # Open & read contents of input file
-csscomp.compress                        # Compress read contents of CSS file
-puts csscomp.compressed_css             # Print compressed CSS
+  csscomp = CssCompressor.new(input_file) # Open & read contents of input file
+  csscomp.compress                        # Compress read contents of CSS file
+  puts csscomp.compressed_css             # Print compressed CSS
 
 == LICENSE:
 
