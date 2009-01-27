@@ -1,6 +1,6 @@
-css-compressor
+css_compressor
   by Jiri Zajpt
-  http://github.com/jzajpt/css-compressor
+  http://github.com/jzajpt/css_compressor
 
 == DESCRIPTION:
 
@@ -9,17 +9,17 @@ CSS Compressor is simple Ruby library for compressing CSS files.
 == INSTALL:
 
   $ gem sources -a http://gems.github.com/ (you only need to do this once)
-  $ gem install jzajpt-css-compressor
+  $ gem install jzajpt-css_compressor
   
 == SOURCE:
 
 CSS compressor's git repository is available on GitHub, which can be browsed at:
 
-  http://github.com/mojombo/grit
+  http://github.com/jzajpt/css_compressor
 
 or cloned from:
 
-  git://github.com/mojombo/grit.git
+  git://github.com/jzajpt/css_compressor.git
 
 == USAGE:
 
