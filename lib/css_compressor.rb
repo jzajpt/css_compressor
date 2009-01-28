@@ -14,9 +14,11 @@ class CssCompressor
   attr_accessor :ratio
 
   # Opens given input file.
-  def initialize(input_file)
-    @input_file = input_file
-    read_original_css
+  def initialize(input_file = nil)
+    if input_file
+      @input_file = input_file
+      read_original_css
+    end
   end
   
   # Reads given input CSS file and compresses it in memory.

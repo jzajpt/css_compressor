@@ -18,5 +18,6 @@ Gem::Specification.new do |s|
     "README.rdoc",
 		"css_compressor.gemspec",
 		"bin/csscomp",
-		"lib/css_compressor.rb"]
+		"lib/css_compressor.rb",
+  	"spec/css_compressor_spec.rb"]
 end
