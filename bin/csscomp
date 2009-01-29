@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
 require 'css_compressor'
 
 def usage
@@ -8,11 +9,14 @@ def usage
 end
 
 input_file = ARGV[0]
-usage if input_file.nil?
+usage if ARGV.size < 1
 
-csscomp = CssCompressor.new(input_file)
-csscomp.compress!
+ARGV.each do |input_file|
+  csscomp = CssCompressor.new(input_file)
+  csscomp.compress!
 
-puts "Original size = #{csscomp.original_size}, compressed size = #{csscomp.compressed_size}"
-puts "Compression ratio = #{csscomp.ratio}"
+  puts " - #{input_file}"
+  puts "Original size = #{csscomp.original_size}, minimized size = #{csscomp.compressed_size}"
+  puts "Compression ratio = #{csscomp.ratio}"
+end
 
