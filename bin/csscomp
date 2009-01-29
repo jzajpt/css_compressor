@@ -4,16 +4,17 @@ require 'rubygems'
 require 'css_compressor'
 
 def usage
-  puts "Usage: csscomp <css-file>"
+  puts "Usage: csscomp [-p] <css-file>"
+  puts " -p - print only statistics, do not procceed with compression"
   exit
 end
 
-input_file = ARGV[0]
 usage if ARGV.size < 1
+print_only = true if ARGV.delete('-p')
 
 ARGV.each do |input_file|
   csscomp = CssCompressor.new(input_file)
-  csscomp.compress!
+  print_only ? csscomp.compress : csscomp.compress!
 
   puts " - #{input_file}"
   puts "Original size = #{csscomp.original_size}, minimized size = #{csscomp.compressed_size}"
