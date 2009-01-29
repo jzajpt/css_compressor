@@ -4,7 +4,7 @@ require 'fileutils'
 
 describe CssCompressor, "working with file" do
   before(:all) do
-    @hash = Digest::SHA1.hexdigest("#{Time.now.to_s}")
+    @hash = Digest::SHA1.hexdigest("#{Time.now.to_s}--#{rand}")
     @content = <<-EOF
     test
     {

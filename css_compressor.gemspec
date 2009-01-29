@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "css_compressor"
-  s.version     = "0.1.1"
+  s.version     = "0.1.2"
   s.date        = "2009-01-27"
   s.summary     = "CSS compressor library."
   s.email       = "jzajpt@blueberry.cz"
