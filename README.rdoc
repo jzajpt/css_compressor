@@ -21,13 +21,22 @@ or cloned from:
 
   git://github.com/jzajpt/css_compressor.git
 
-== USAGE:
+== LIBRARY USAGE:
 
-CSS Compressor is fairly simple to use:
+CSS Compressor object is fairly simple to use:
 
   csscomp = CssCompressor.new(input_file) # Open & read contents of input file
   csscomp.compress                        # Compress read contents of CSS file
   puts csscomp.compressed_css             # Print compressed CSS
+  
+== CSSCOMP TOOL USAGE:
+
+Csscomp tool compresses all files given as argument:
+
+  csscomp [-p] <css-files>
+  
+-p option causes csscomp to only print statistics and exit.
+
 
 == LICENSE:
 
@@ -53,5 +62,3 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
