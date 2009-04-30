@@ -41,6 +41,7 @@ class CssCompressor
     @compressed_css.strip!
     @compressed_size = @compressed_css.length
     @ratio           = @compressed_size / @original_size.to_f
+    @compressed_css
   end
   
   # Reads given input CSS, compresses it and overwrites original file with compressed CSS. 
